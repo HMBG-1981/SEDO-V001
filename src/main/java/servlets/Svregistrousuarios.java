@@ -37,24 +37,24 @@ public class Svregistrousuarios extends HttpServlet {
 
         try (Connection con = conexionbd.getConnection()) {
             if (con != null) {
-                // Comprobar si el documento ya existe
-                String checkSql = "SELECT documento FROM registrousuarios WHERE documento = ?";
-                try (PreparedStatement checkPst = con.prepareStatement(checkSql)) {
-                    checkPst.setString(1, documento);
-                    ResultSet rs = checkPst.executeQuery();
-
-                    if (rs.next()) {
-                        // Si el documento ya existe, redirigir a ErrorRegistro.jsp
-                        request.getRequestDispatcher("otros/ErrorRegistro.jsp").forward(request, response);
-                        return;
-                    }
-                }
-
                 String sql = "";
                 PreparedStatement pst = null;
 
                 switch (action) {
                     case "register":
+                        // Comprobar si el documento ya existe solo cuando se registra
+                        String checkSql = "SELECT documento FROM registrousuarios WHERE documento = ?";
+                        try (PreparedStatement checkPst = con.prepareStatement(checkSql)) {
+                            checkPst.setString(1, documento);
+                            ResultSet rs = checkPst.executeQuery();
+
+                            if (rs.next()) {
+                                // Si el documento ya existe, redirigir a ErrorRegistro.jsp
+                                request.getRequestDispatcher("otros/ErrorRegistro.jsp").forward(request, response);
+                                return;
+                            }
+                        }
+
                         sql = "INSERT INTO registrousuarios (tipo_documento, documento, tipo_usuario, nombres, apellidos, direccion, telefono, correo, contraseña) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
                         pst = con.prepareStatement(sql);
                         pst.setString(1, tipoDocumento);
@@ -67,7 +67,9 @@ public class Svregistrousuarios extends HttpServlet {
                         pst.setString(8, correo);
                         pst.setString(9, contraseña);
                         break;
+
                     case "update":
+                        // No se realiza verificación del documento en la actualización
                         sql = "UPDATE registrousuarios SET tipo_usuario=?, nombres=?, apellidos=?, direccion=?, telefono=?, correo=?, contraseña=? WHERE tipo_documento=? AND documento=?";
                         pst = con.prepareStatement(sql);
                         pst.setString(1, tipoUsuario);
@@ -80,12 +82,14 @@ public class Svregistrousuarios extends HttpServlet {
                         pst.setString(8, tipoDocumento);
                         pst.setString(9, documento);
                         break;
+
                     case "delete":
                         sql = "DELETE FROM registrousuarios WHERE tipo_documento=? AND documento=?";
                         pst = con.prepareStatement(sql);
                         pst.setString(1, tipoDocumento);
                         pst.setString(2, documento);
                         break;
+
                     default:
                         response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Acción no válida");
                         return;
