@@ -1,0 +1,17 @@
+servlets\Svregistro_empleados.class
+servlets\Svindex.class
+conexion\conexionbd.class
+servlets\Svquejas_sugerencias.class
+com\mycompany\sedo\cra\resources\JakartaEE10Resource.class
+servicios\UsuarioService.class
+servicios\UsuarioServiceIndex.class
+servlets\Svhome_usuarios.class
+servlets\Svingresoclientes.class
+servlets\Svregistrousuarios.class
+servlets\Svingresoempleados.class
+servlets\Svmodulo_empleados.class
+com\mycompany\proyectosedo\resources\JakartaEE10Resource.class
+com\mycompany\sedo\cra\JakartaRestConfiguration.class
+com\mycompany\proyectosedo\JakartaRestConfiguration.class
+servlets\Svmodulo_Administrador.class
+servlets\Svingresar_actualizar_productos.class
