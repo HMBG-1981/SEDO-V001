@@ -9,6 +9,7 @@ servlets\Svhome_usuarios.class
 servlets\Svingresoclientes.class
 servlets\Svregistrousuarios.class
 servlets\Svingresoempleados.class
+servlets\BuscarPedidoServlet.class
 servlets\Svmodulo_empleados.class
 com\mycompany\proyectosedo\resources\JakartaEE10Resource.class
 com\mycompany\sedo\cra\JakartaRestConfiguration.class
