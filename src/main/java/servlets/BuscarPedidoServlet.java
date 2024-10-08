@@ -65,7 +65,6 @@ public class BuscarPedidoServlet extends HttpServlet {
 
             // Título principal "ASADOS ANGÉLICA"
             out.println("<h1>ASADOS ANGÉLICA</h1>");
-
             out.println("<img src='img/Logo02.jpg' id='logo' alt='Logo' style='max-width: 15%; width: auto; height: auto;'>");
 
             // Formulario para buscar pedido
@@ -73,6 +72,7 @@ public class BuscarPedidoServlet extends HttpServlet {
             out.println("<label for='idPedido' style='color: black;'><b>Ingrese el ID del Pedido:</b></label>");
             out.println("<input type='text' id='idPedido' name='idPedido' required>");
             out.println("<input type='submit' value='Buscar Pedido'>");
+            out.println("</form>");
 
             // Mostrar los datos del pedido en una tabla
             if (rs.next()) {

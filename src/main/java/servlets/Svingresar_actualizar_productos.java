@@ -35,7 +35,7 @@ public class Svingresar_actualizar_productos extends HttpServlet {
                     int rowsAffected = ps.executeUpdate();
                     if (rowsAffected > 0) {
                         request.setAttribute("mensaje", "Operación " + action + " completada con éxito.");
-                        request.getRequestDispatcher("otros/confirmacion.jsp").forward(request, response);
+                        request.getRequestDispatcher("otros/confirmacion2.jsp").forward(request, response);
                     } else {
                         response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "No se pudo completar la operación");
                     }

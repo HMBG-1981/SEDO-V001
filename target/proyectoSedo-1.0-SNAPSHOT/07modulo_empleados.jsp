@@ -78,8 +78,8 @@
             <div class="contenedor">
                     <div class="button-container">
                         <button class="btn btn-secondary" onclick="window.location.href = '12ver_pedidos.jsp'">Pedidos</button>
-                        <button class="btn btn-secondary" onclick="window.location.href = 'consultar_clientes.jsp'">Clientes</button>
-                        <button class="btn btn-secondary" onclick="window.location.href = 'consultar_productos.jsp'">Productos</button>
+                        <button class="btn btn-secondary" onclick="window.location.href = '13consultar_clientes.jsp'">Clientes</button>
+                        <button class="btn btn-secondary" onclick="window.location.href = '14ver_productos.jsp'">Productos</button>
                         <button class="btn btn-secondary" onclick="window.print()">Imprimir</button>
                         <button class="btn btn-secondary" onclick="confirmLogout()">Cerrar Sesión</button>
                     </div>
