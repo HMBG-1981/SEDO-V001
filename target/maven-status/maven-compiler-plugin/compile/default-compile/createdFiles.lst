@@ -1,5 +1,6 @@
 servlets\Svregistro_empleados.class
 servlets\Svindex.class
+servlets\ConsultarClienteServlet.class
 conexion\conexionbd.class
 servlets\Svquejas_sugerencias.class
 com\mycompany\sedo\cra\resources\JakartaEE10Resource.class
