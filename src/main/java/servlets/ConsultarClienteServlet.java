@@ -18,6 +18,7 @@ import jakarta.servlet.http.HttpServletResponse;
 
 @WebServlet("/ConsultarClienteServlet")
 public class ConsultarClienteServlet extends HttpServlet {
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String idRegistro = request.getParameter("idRegistro");
         response.setContentType("text/html");
@@ -49,6 +50,8 @@ public class ConsultarClienteServlet extends HttpServlet {
             out.println("table { width: 100%; border-collapse: collapse; margin-top: 20px; background-color: #74ff63; }"); // Fondo de la tabla
             out.println("th, td { border: 1px solid black; padding: 8px; text-align: left; }");
             out.println("th { background-color: #f2f2f2; }");
+            out.println("button { margin-top: 20px; padding: 10px 20px; background-color: #28a745; color: white; border: none; cursor: pointer; }");
+            out.println("button:hover { background-color: #218838; }");
             out.println("</style>");
             out.println("</head><body>");
 
@@ -82,6 +85,13 @@ public class ConsultarClienteServlet extends HttpServlet {
                 out.println("<h2>No se encontró un cliente con el ID proporcionado.</h2>");
             }
 
+            // Botón para volver al módulo 07modulo_empleados.jsp
+            out.println("<form action='07modulo_empleados.jsp' method='get'>");
+            out.println("<button type='submit'>Volver</button>");
+            out.println("</form>");
+
+            out.println("</body></html>");
+
             ps.close();
             conn.close();
         } catch (Exception e) {
@@ -91,5 +101,3 @@ public class ConsultarClienteServlet extends HttpServlet {
         }
     }
 }
-
-

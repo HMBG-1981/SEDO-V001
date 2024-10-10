@@ -5,209 +5,115 @@
 --%>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
     <head>
-        <title>Modulo Administrador SEDO</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Administrador - Empleados</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
         <style>
-            * {
+            body {
+                font-family: Arial, sans-serif;
+                background-image: url('img/upload-816230812391.png');
+                background-size: cover;
+                background-position: center;
                 margin: 0;
                 padding: 0;
-                font-family: Georgia, 'Times New Roman', Times, serif;
                 text-align: center;
             }
-
-            body {
-                background: url(img/upload-816230812391.png) no-repeat center center fixed;
-                background-size: cover;
-            }
-
             h1 {
-                margin-top: 3%;
-                font-size: 50px;
-                color: rgb(187, 255, 0);
+                font-size: 30px;
+                color: rgb(21, 255, 0);
                 text-shadow: 2px 2px 0 rgb(17, 16, 16), 2px -2px 0 rgb(7, 7, 7), -1px -1px 0 rgb(0, 0, 0);
             }
+            .container {
+                margin-left: 150px;
+                margin-right: 150px;
+                border-radius: 10px;
+                display: inline-block;
+            }
 
-            img {
-                margin-right: 800px;
-                max-width: 50%;
-                height: 160px;
+            .logo img {
+                max-width: 25%;
+                height: auto;
                 border-radius: 10px;
             }
-
-            .contenedor {
-                background-color: #00d9ff;
-                padding: 20px;
-                border-radius: 10px;
-                box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-                margin-top: 20px;
+            .welcome-message {
+                font-size: 18px;
+                margin-bottom: 20px;
             }
-
-            table {
-                width: 100%;
-                border-collapse: collapse;
-                margin-top: 20px;
+            .buttons {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
             }
-
-            th, td {
-                padding: 10px;
-                text-align: left;
-                border-bottom: 1px solid #ccc;
+            .buttons button {
+                background-color: #1db50b;
+                color: black;
+                border: none;
+                padding: 10px 10px;
+                margin: 10px;
+                cursor: pointer;
+                font-size: 16px;
+                border-radius: 5px;
+                transition: background-color 0.3s;
+                width: 200px; /* Tamaño fijo para los botones */
             }
-
-            th {
-                background-color: #f0f0f0;
-            }
-
-            tr:hover {
-                background-color: #f9f9f9;
-            }
-
-            .btn-secondary {
-                margin: 5px;
-                color: #000;
-                background-color: #ccc;
+            .buttons button:hover {
+                background-color: #0056b3;
             }
 
             p {
-                margin-top: 5px;
-                font-size: 40px;
+                font-size: 50px;
                 font-family: fantasy;
                 color: rgb(21, 255, 0);
                 text-shadow: 2px 2px 0 rgb(17, 16, 16), 2px -2px 0 rgb(7, 7, 7), -1px -1px 0 rgb(0, 0, 0);
             }
-
-            .search-panel, .orders-panel {
-                margin-top: 20px;
-            }
-
-            .settings-container {
-                position: absolute;
-                top: 20px;
-                right: 65px;
-                text-align: center;
-            }
-
-            /* Estilo del ícono */
-            .settings-icon {
-                font-size: 38px;
-                color: #17202a;
-                cursor: pointer;
-            }
-
-            /* Estilo del texto debajo del ícono */
-            .settings-text {
-                font-size: 20px;
-                color: #17202a;
-                margin-top: 5px;
+            .buttons button i {
+                margin-right: 8px;
             }
         </style>
+    </head>
+    <body>
+
+        <div class="container">
+            <!-- Mensaje de bienvenida -->
+            <p >¡Bienvenido Administrador! </p>
+            <!-- Logo centrado -->
+            <div class="logo">
+                <img src="img/Logo02.jpg" alt="Logo">
+            </div>
+
+            <!-- Título -->
+            <h1>SEDO-CRA </h1>
+
+
+
+            <!-- Botones en dos filas -->
+            <div class="buttons">
+                <!-- Primera fila de botones -->
+                <button onclick="window.location.href = '12ver_pedidos.jsp'"><b>Pedidos del Día</b></button>
+                <button onclick="window.location.href = '13consultar_clientes.jsp'"><b>Consultar Clientes</b></button>
+                <button onclick="window.location.href = '14ver_productos.jsp'"><b>Consultar Productos</b></button>
+                <button onclick="window.location.href = '11registro_empleados.jsp'"><b>Registrar Empleados</b></button>
+
+                <!-- Segunda fila de botones -->
+                <button onclick="window.location.href = '05ingresar_actualizar_productos.jsp'"><b>Registrar Productos</b></button>
+                <button onclick="window.location.href = 'modulo_otros1.jsp'"><b>Otros1</b></button>
+                <button onclick="window.location.href = '15Ajustes.jsp'">
+                    <i class="fas fa-cog"></i> <b>Ajustes Sistema</b>
+                </button>
+                <button onclick="cerrarSesion()"><b>Cerrar Sesión</b></button>
+            </div>
+        </div>
+
+        <!-- Script para cerrar sesión con confirmación -->
         <script>
-            function cargarPedidos() {
-                fetch('PedidosServlet')
-                        .then(response => response.json())
-                        .then(data => {
-                            const tableBody = document.getElementById('ordersTableBody');
-                            tableBody.innerHTML = '';
-
-                            data.forEach(pedido => {
-                                const row = document.createElement('tr');
-                                row.innerHTML = `
-                                <td>${pedido.id}</td>
-                                <td>${pedido.cliente}</td>
-                                <td>${pedido.fecha}</td>
-                                <td>${pedido.producto}</td>
-                                <td>${pedido.cantidad}</td>
-                                <td>${pedido.total}</td>
-                            `;
-                                tableBody.appendChild(row);
-                            });
-                        })
-                        .catch(error => console.error('Error al cargar los pedidos:', error));
-            }
-
-            function agregarPedido() {
-                // Función para agregar un nuevo pedido, puede realizarse mediante una llamada POST al servlet
-            }
-
-            function imprimirPedido() {
-                window.print();
-            }
-
             function cerrarSesion() {
-                if (confirm("¿Estás seguro de que quieres salir del sistema?")) {
+                if (confirm("¿Estás seguro de que deseas cerrar sesión?")) {
                     window.location.href = '01index.jsp';
                 }
             }
-
-            function buscarPedidos() {
-                alert("Función de búsqueda aún no implementada.");
-            }
-
-            function registrarEmpleado() {
-                window.location.href = '11registro_empleados.jsp';
-            }
-
-            function registrarProductos() {
-                window.location.href = '05ingresar_actualizar_productos.jsp';
-            }
-
-            document.addEventListener('DOMContentLoaded', function () {
-                cargarPedidos();
-                setInterval(cargarPedidos, 5000); // Actualiza los pedidos cada 5 segundos
-            });
         </script>
-
-    </head>
-    <body>       
-
-        <div class="container mt-3">
-            <p>Bienvenidos, Módulo del Administrador</p>
-            <h1>ADMINISTRADOR</h1>
-
-            <div class="btn">
-                <button type="button" class="btn btn-secondary" onclick="imprimirPedido()">Imprimir Pedidos</button>
-                <button type="button" class="btn btn-secondary" onclick="registrarEmpleado()">Registrar Empleados</button>
-                <button type="button" class="btn btn-secondary" onclick="registrarProductos()">Registrar Productos</button>
-                <button type="button" class="btn btn-secondary" onclick="cerrarSesion()">Cerrar Sesión</button>
-            </div>
-            <div class="settings-container">
-                <a href="pagina_configuracion.html">
-                    <i class="fas fa-cog settings-icon"></i>
-                    <div class="settings-text">Configuración</div>
-                </a>
-            </div>
-
-
-            <div class="search-panel">
-                <input type="text" class="form-control" placeholder="Buscar en la base de datos">
-                <button type="button" class="btn btn-primary mt-2" onclick="buscarPedidos()">Buscar</button>
-            </div>
-
-            <div class="contenedor orders-panel">
-                <h2>Pedidos</h2>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>ID del Pedido</th>
-                            <th>Cliente</th>
-                            <th>Fecha</th>
-                            <th>Producto</th>
-                            <th>Cantidad</th>
-                            <th>Total</th>
-                        </tr>
-                    </thead>
-                    <tbody id="ordersTableBody">
-                        <!-- Las filas de la tabla se llenarán dinámicamente -->
-                    </tbody>
-                </table>
-            </div>
-        </div>
     </body>
 </html>
-

@@ -43,7 +43,7 @@
             }
 
             .btn-secondary {
-                padding: 3%;
+                padding: 2%;
                 margin: 5px;
                 color: #000;
                 background-color: #1db50b;
@@ -58,10 +58,8 @@
             }
         </style>
         <script>
-            function confirmLogout() {
-                if (confirm("¿Estás seguro que deseas cerrar sesión?")) {
-                    window.location.href = 'logout.jsp'; // Redirigir al servlet de cerrar sesión
-                }
+            function confirmarLogout() {
+                return confirm("¿Estás seguro de que deseas cerrar sesión?");
             }
         </script>
     </head>
@@ -76,14 +74,17 @@
             </div>
 
             <div class="contenedor">
+                <form method="POST" action="SvModuloEmpleados">
                     <div class="button-container">
-                        <button class="btn btn-secondary" onclick="window.location.href = '12ver_pedidos.jsp'">Pedidos</button>
-                        <button class="btn btn-secondary" onclick="window.location.href = '13consultar_clientes.jsp'">Clientes</button>
-                        <button class="btn btn-secondary" onclick="window.location.href = '14ver_productos.jsp'">Productos</button>
-                        <button class="btn btn-secondary" onclick="window.print()">Imprimir</button>
-                        <button class="btn btn-secondary" onclick="confirmLogout()">Cerrar Sesión</button>
+                        <button class="btn btn-secondary" type="submit" name="action" value="Pedidos">Pedidos</button>
+                        <button class="btn btn-secondary" type="submit" name="action" value="Clientes">Clientes</button>
+                        <button class="btn btn-secondary" type="submit" name="action" value="Productos">Productos</button>                        
+                        <button class="btn btn-secondary" type="submit" onclick="return confirmarLogout();">Cerrar Sesión</button>
+                        <input type="hidden" name="action" value="Logout">
                     </div>
+                </form>
             </div>
+
 
         </div>
     </body>

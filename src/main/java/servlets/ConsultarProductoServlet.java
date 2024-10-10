@@ -49,6 +49,8 @@ public class ConsultarProductoServlet extends HttpServlet {
             out.println("th, td { border: 1px solid black; padding: 8px; text-align: left; }");
             out.println("th { background-color: #f2f2f2; }");
             out.println("h1 { text-align: center; font-size: 50px; color: rgb(21, 255, 0); text-shadow: 2px 2px 0 rgb(17, 16, 16), 2px -2px 0 rgb(7, 7, 7), -1px -1px 0 rgb(0, 0, 0); margin-top: 50px; }");
+            out.println("button { margin-top: 20px; padding: 10px 20px; background-color: #28a745; color: white; border: none; cursor: pointer; }");
+            out.println("button:hover { background-color: #218838; }");
             out.println("</style></head><body>");
 
             out.println("<h1>ASADOS ANGÉLICA</h1>");
@@ -69,6 +71,11 @@ public class ConsultarProductoServlet extends HttpServlet {
             } else {
                 out.println("<tr><td colspan='4'>No se encontró el producto con ID: " + idProducto + "</td></tr>");
             }
+            
+            // Botón para volver al módulo 07modulo_empleados.jsp
+            out.println("<form action='07modulo_empleados.jsp' method='get'>");
+            out.println("<button type='submit'>Volver</button>");
+            out.println("</form>");
 
             out.println("</table>");
             out.println("</body></html>");

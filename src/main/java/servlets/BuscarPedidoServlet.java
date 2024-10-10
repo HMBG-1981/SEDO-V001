@@ -94,6 +94,11 @@ public class BuscarPedidoServlet extends HttpServlet {
                 out.println("<p>No se encontró un pedido con el ID: " + idPedido + "</p>");
             }
 
+            // Botón para volver al módulo 07modulo_empleados.jsp
+            out.println("<form action='07modulo_empleados.jsp' method='get'>");
+            out.println("<button type='submit'>Volver</button>");
+            out.println("</form>");
+
             out.println("</body></html>");
 
             ps.close();
@@ -103,3 +108,4 @@ public class BuscarPedidoServlet extends HttpServlet {
         }
     }
 }
+
