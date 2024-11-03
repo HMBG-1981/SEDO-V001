@@ -78,10 +78,9 @@ public class BuscarPedidoServlet extends HttpServlet {
             if (rs.next()) {
                 out.println("<h2 style='color: black;'><b>Detalles del Pedido</b></h2>");
                 out.println("<table>");
-                out.println("<tr><th>ID Pedido</th><th>ID Registro</th><th>Producto</th><th>Total</th></tr>");
+                out.println("<tr><th>ID Pedido</th><th>Producto</th><th>Total</th></tr>");
                 out.println("<tr>");
                 out.println("<td>" + rs.getInt("id_pedido") + "</td>");
-                out.println("<td>" + rs.getInt("idRegistro") + "</td>");
                 out.println("<td>" + rs.getString("productos") + "</td>");
                 out.println("<td>" + rs.getDouble("total") + "</td>");
                 out.println("</tr>");

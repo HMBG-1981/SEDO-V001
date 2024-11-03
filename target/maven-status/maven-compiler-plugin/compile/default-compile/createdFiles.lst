@@ -11,10 +11,12 @@ servlets\Svingresoclientes.class
 servlets\Svregistrousuarios.class
 servlets\Svingresoempleados.class
 servlets\ConsultarProductoServlet.class
+servlets\PedidoServlet.class
 servlets\BuscarPedidoServlet.class
 servlets\Svmodulo_empleados.class
 com\mycompany\proyectosedo\resources\JakartaEE10Resource.class
 com\mycompany\sedo\cra\JakartaRestConfiguration.class
 com\mycompany\proyectosedo\JakartaRestConfiguration.class
 servlets\Svmodulo_Administrador.class
+servlets\ProductoServlet.class
 servlets\Svingresar_actualizar_productos.class

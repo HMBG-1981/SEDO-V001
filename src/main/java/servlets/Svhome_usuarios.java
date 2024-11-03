@@ -24,7 +24,7 @@ public class Svhome_usuarios extends HttpServlet {
             
             case "Productos":
                 // Lógica para la página de Productos
-                response.sendRedirect("08modulo_productos_carrito.jsp");
+                response.sendRedirect("productos.jsp");
                 break;
 
             case "Sugerencias":
