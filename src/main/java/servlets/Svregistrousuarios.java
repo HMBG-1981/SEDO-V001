@@ -97,7 +97,7 @@ public class Svregistrousuarios extends HttpServlet {
 
                 int rowsAffected = pst.executeUpdate();
                 if (rowsAffected > 0) {
-                    request.getRequestDispatcher("otros/confirmacion.jsp").forward(request, response);
+                    request.getRequestDispatcher("otros/confirmacion1.jsp").forward(request, response);
                 } else {
                     response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "No se pudo completar la operación");
                 }

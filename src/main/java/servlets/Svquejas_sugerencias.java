@@ -22,7 +22,6 @@ public class Svquejas_sugerencias extends HttpServlet {
         String nombre = request.getParameter("nombre");
         String correo = request.getParameter("correo");
         String mensaje = request.getParameter("mensaje");
-        String fechaHora = request.getParameter("fechaHora");
         
         // Respuesta para el cliente
         String mensajeRespuesta = "";
@@ -40,12 +39,11 @@ public class Svquejas_sugerencias extends HttpServlet {
             PreparedStatement pstmt = null;
             try {
                 con = conexionbd.getConnection();
-                String sql = "INSERT INTO quejas (nombre, correo, mensaje, fechaHora) VALUES (?, ?, ?, ?)";
+                String sql = "INSERT INTO quejas (nombre, correo, mensaje, fechaHora) VALUES (?, ?, ?, CURRENT_TIMESTAMP)";
                 pstmt = con.prepareStatement(sql);
                 pstmt.setString(1, nombre);
                 pstmt.setString(2, correo);
                 pstmt.setString(3, mensaje);
-                pstmt.setString(4, fechaHora); // Almacenar la fecha y hora
                 pstmt.executeUpdate();
                 mensajeRespuesta = "Gracias por su queja/sugerencia. Nos pondremos en contacto con usted.";
             } catch (Exception e) {
@@ -67,4 +65,3 @@ public class Svquejas_sugerencias extends HttpServlet {
         }
     }
 }
-

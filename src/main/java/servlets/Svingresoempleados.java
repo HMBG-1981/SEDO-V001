@@ -31,15 +31,32 @@ public class Svingresoempleados extends HttpServlet {
             String usuario = request.getParameter("usuario");
             String clave = request.getParameter("clave");
 
-            String sql = "SELECT * FROM registrousuarios WHERE documento = ? AND contraseña = ?";
+            String sql = "SELECT Tipo_Usuario FROM registrousuarios WHERE documento = ? AND contraseña = ?";
             ps = con.prepareStatement(sql);
             ps.setString(1, usuario);
             ps.setString(2, clave);
             rs = ps.executeQuery();
 
             if (rs.next()) {
-                // Si se encuentra un registro que coincide con el usuario y la contraseña
-                request.getRequestDispatcher("07modulo_empleados.jsp").forward(request, response);
+                int tipoUsuario = rs.getInt("Tipo_Usuario");
+
+                // Redirigir según el valor de Tipo_Usuario
+                switch (tipoUsuario) {
+                    case 1:
+                        // Si Tipo_Usuario es 1, redirigir al módulo de administrador
+                        request.getRequestDispatcher("10modulo_Administrador.jsp").forward(request, response);
+                        break;
+                    case 2:
+                        // Si Tipo_Usuario es 2, redirigir al módulo de empleados
+                        request.getRequestDispatcher("07modulo_empleados.jsp").forward(request, response);
+                        break;
+                    default:
+                        // Si el tipo de usuario no es válido
+                        request.setAttribute("error", "Tipo de usuario no válido");
+                        request.setAttribute("errorExist", true);
+                        request.getRequestDispatcher("otros/error.jsp").forward(request, response);
+                        break;
+                }
             } else {
                 // Si no se encuentra ningún registro
                 request.setAttribute("error", "usuario o clave incorrectos");

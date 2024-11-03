@@ -1,6 +1,6 @@
 <%-- 
-    Document   : confirmacion
-    Created on : 22/07/2024, 6:07:14 p. m.
+    Document   : confirmacion1
+    Created on : 3/11/2024, 1:00:33 p. m.
     Author     : jedab
 --%>
 
@@ -10,33 +10,33 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
-        
-         <style>
+
+        <style>
             *{
-    margin: 0px;
-    padding: 0px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    text-align: center;
-}
+                margin: 0px;
+                padding: 0px;
+                font-family: Georgia, 'Times New Roman', Times, serif;
+                text-align: center;
+            }
 
 
-body{
+            body{
 
-    display: inline-block;
-    margin: 70px;
-    background: url(img/fondo_error.jpg);
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    background-attachment: fixed;
-}
+                display: inline-block;
+                margin: 70px;
+                background: url(img/fondo_error.jpg);
+                background-repeat: no-repeat;
+                background-size: 100% 100%;
+                background-attachment: fixed;
+            }
 
 
-h1{
-   margin-top: 120px; 
-   font-size: 250%;
-}
+            h1{
+                margin-top: 120px;
+                font-size: 250%;
+            }
 
-.btn {
+            .btn {
                 font-size: 200%;
                 background-color: blue;
                 color: white;
@@ -52,7 +52,7 @@ h1{
     <body>
         <h1>Regitro Exitoso!!!</h1>
         <div class="footer">
-            <form action="11registro_empleados.jsp" method="get" autocomplete="off" novalidate>
+            <form action="04registro_usuarios.jsp" method="get" autocomplete="off" novalidate>
                 <button type="submit" class="btn">Ok</button>
             </form>
         </div>

@@ -52,7 +52,7 @@ h1{
     <body>
         <h1>Regitro Exitoso!!!</h1>
         <div class="footer">
-            <form action="http://localhost:8080/proyectoSedo/04registro_usuarios.jsp" method="get" autocomplete="off" novalidate>
+            <form action="11registro_empleados.jsp" method="get" autocomplete="off" novalidate>
                 <button type="submit" class="btn">Ok</button>
             </form>
         </div>
