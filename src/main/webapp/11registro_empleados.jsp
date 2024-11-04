@@ -126,13 +126,7 @@
                 width: 48%;
             }
 
-            footer {
-                margin-top: 0px;
-                font-size: 70%;
-                color: rgb(0, 255, 0);
-                text-align: center;
-            }
-
+            
             .checkbox {
                 display: flex;
                 align-items: center;
@@ -142,6 +136,19 @@
 
             .checkbox input {
                 margin-right: 10px;
+            }
+            footer {
+                margin-top: 15px;
+                font-size: 90%;
+                color: #49ff00;
+                position: absolute; /* Posicionamiento absoluto */
+                bottom: 10px; /* Ajustar según sea necesario */
+                left: 10px; /* Ajustar según sea necesario */
+                text-align: left; /* Alinear texto a la izquierda */
+            }
+            .copyright-logo {
+                width: 20px; /* Ajusta el tamaño según necesites */
+                vertical-align: middle; /* Centra verticalmente con el texto */
             }
         </style>
     </head>
@@ -193,9 +200,6 @@
             <button class="btn-a" type="submit" name="action" value="update" id="updateBtn" disabled>Actualizar</button>
 
             <p><a href="01index.jsp">¿Ya tengo Cuenta?</a></p>
-            <footer>
-                SEDO-CRA V1.0. 2024
-            </footer>
         </form>
 
         <script>
@@ -225,5 +229,9 @@
                 return valid;
             }
         </script>
+        <footer>
+            <img src="img/pngegg.png" alt="Copyright" class="copyright-logo">
+            2024. Todos los derechos reservados. SEDO-CRA V1.0.0
+        </footer
     </body>
 </html>

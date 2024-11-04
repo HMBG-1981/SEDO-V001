@@ -1,5 +1,5 @@
 <%-- 
-    Document   : 11registro_empleados
+    Document   : 04registro_usuarios
     Created on : 15/08/2024, 3:30:15 p. m.
     Author     : jedab
 --%>
@@ -78,10 +78,10 @@
 
             button {
                 width: 100%;
-                background: #1900ff;
+                background: #002bff;
                 border: none;
                 padding: 10px;
-                color: white;
+                color: Black;
                 margin: 3px 0;
                 font-size: 16px;
                 cursor: pointer;
@@ -127,12 +127,6 @@
                 width: 48%;
             }
 
-            footer {
-                margin-top: 0px;
-                font-size: 70%;
-                color: rgb(0, 255, 0);
-                text-align: center;
-            }
 
             .checkbox {
                 display: flex;
@@ -156,12 +150,26 @@
                 border-radius: 5px;
                 box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
                 font-size: 16px;
-                transition: background-color 0.3s;                
+                transition: background-color 0.3s;
                 text-decoration: underline;
             }
 
             .go-to-index-btn:hover {
                 background-color: #45a049;
+            }
+
+           footer {
+                margin-top: 15px;
+                font-size: 90%;
+                color: #49ff00;
+                position: absolute; /* Posicionamiento absoluto */
+                bottom: 10px; /* Ajustar según sea necesario */
+                left: 10px; /* Ajustar según sea necesario */
+                text-align: left; /* Alinear texto a la izquierda */
+            }
+            .copyright-logo {
+                width: 20px; /* Ajusta el tamaño según necesites */
+                vertical-align: middle; /* Centra verticalmente con el texto */
             }
         </style>
     </head>
@@ -212,10 +220,8 @@
             <button class="btn-a" type="submit" name="action" value="update" id="updateBtn" disabled>Actualizar</button>
 
             <p><a href="01index.jsp">¿Ya tengo Cuenta?</a></p>
-            <footer>
-                SEDO-CRA V1.0. 2024
-            </footer>
         </form>        
+        
 
         <script>
             function toggleSubmitButton() {
@@ -245,6 +251,10 @@
             }
         </script>
         <a href="01index.jsp" class="go-to-index-btn">Ir a Inicio</a>
+        <footer>
+            <img src="img/pngegg.png" alt="Copyright" class="copyright-logo">
+            2024. Todos los derechos reservados. SEDO-CRA V1.0.0
+        </footer
 
     </body>    
 </html>

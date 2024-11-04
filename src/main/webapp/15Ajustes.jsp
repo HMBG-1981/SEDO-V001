@@ -13,7 +13,7 @@
         <title>Ajustes del Sistema - SEDO-CRA</title>
         <style>
             body {
-                font-family: Arial, sans-serif;
+                font-family: 'Times New Roman', Times, serif;
                 margin: 0;
                 padding: 0;
                 background-image: url('img/upload-816230812391.png');

@@ -17,7 +17,7 @@
                 background-image: url('img/upload-816230812391.png');
                 background-size: cover;
                 color: #333;
-                font-family: Arial, sans-serif;
+                font-family: 'Times New Roman', Times, serif;
             }
             h1 {
                 text-align: center;
@@ -46,6 +46,19 @@
             input[type="submit"] {
                 margin-top: 10px;
             }
+            footer {
+                margin-top: 15px;
+                font-size: 90%;
+                color: #49ff00;
+                position: absolute; /* Posicionamiento absoluto */
+                bottom: 10px; /* Ajustar según sea necesario */
+                left: 10px; /* Ajustar según sea necesario */
+                text-align: left; /* Alinear texto a la izquierda */
+            }
+            .copyright-logo {
+                width: 20px; /* Ajusta el tamaño según necesites */
+                vertical-align: middle; /* Centra verticalmente con el texto */
+            }
         </style>
     </head>
     <body>
@@ -55,11 +68,15 @@
             <h2 class="text-center">Consultar Cliente por ID</h2>
             <form action="ConsultarClienteServlet" method="POST">
                 <div class="mb-3">
-                    <label for="idRegistro" class="form-label">ID Registro:</label>
+                    <label for="idRegistro" class="form-label">Ingrese ID de Usuario</label>
                     <input type="text" class="form-control" id="idRegistro" name="idRegistro" required>
                 </div>
                 <button type="submit" class="btn btn-primary">Buscar</button>
             </form>
         </div>
+        <footer>
+            <img src="img/pngegg.png" alt="Copyright" class="copyright-logo">
+            2024. Todos los derechos reservados. SEDO-CRA V1.0.0
+        </footer
     </body>
 </html>

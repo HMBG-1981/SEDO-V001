@@ -106,7 +106,7 @@
             }
 
             select{
-                width: 60%;
+                width: 65%;
                 background: rgb(255, 255, 255);
                 padding: 5px;
                 border: 4px;
@@ -118,11 +118,17 @@
             }
 
             footer {
-                margin-top: -20px;
-                font-size: 70%;
-                color: rgb(0, 255, 0);
-                text-align: center;
-
+                margin-top: 15px;
+                font-size: 90%;
+                color: #49ff00;
+                position: absolute; /* Posicionamiento absoluto */
+                bottom: 10px; /* Ajustar según sea necesario */
+                left: 10px; /* Ajustar según sea necesario */
+                text-align: left; /* Alinear texto a la izquierda */
+            }
+            .copyright-logo {
+                width: 20px; /* Ajusta el tamaño según necesites */
+                vertical-align: middle; /* Centra verticalmente con el texto */
             }
         </style>
     </head>
@@ -147,10 +153,9 @@
             <button type="submit" name="action" value="actualizar">Actualizar</button>
             <button type="submit" name="action" value="eliminar">Eliminar</button>
         </form>
-        <div id="piepagina">
-            <footer>
-                SEDO-CRA V1.0. 2024
-            </footer>        
-        </div>
+        <footer>
+            <img src="img/pngegg.png" alt="Copyright" class="copyright-logo">
+            2024. Todos los derechos reservados. SEDO-CRA V1.0.0
+        </footer
     </body>
 </html>

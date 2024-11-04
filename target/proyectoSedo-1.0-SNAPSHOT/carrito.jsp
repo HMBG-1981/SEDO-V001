@@ -14,8 +14,8 @@
     <link rel="stylesheet" href="styles.css">
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            font-family: 'Times New Roman', Times, serif;
+            background-color: #ffecb3;
             margin: 0;
             padding: 20px;
         }
@@ -23,7 +23,7 @@
         .container {
             max-width: 800px;
             margin: auto;
-            background: #fff;
+            background: #ffd54f;
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
