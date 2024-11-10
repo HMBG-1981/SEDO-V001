@@ -54,21 +54,21 @@ public class Svingresoempleados extends HttpServlet {
                         // Si el tipo de usuario no es válido
                         request.setAttribute("error", "Tipo de usuario no válido");
                         request.setAttribute("errorExist", true);
-                        request.getRequestDispatcher("otros/error.jsp").forward(request, response);
+                        request.getRequestDispatcher("otros/error2.jsp").forward(request, response);
                         break;
                 }
             } else {
                 // Si no se encuentra ningún registro
                 request.setAttribute("error", "usuario o clave incorrectos");
                 request.setAttribute("errorExist", true);
-                request.getRequestDispatcher("otros/error.jsp").forward(request, response);
+                request.getRequestDispatcher("otros/error2.jsp").forward(request, response);
             }
         } catch (SQLException e) {
             e.printStackTrace();
             // Manejo de excepciones de SQL
             request.setAttribute("error", "Error de conexión a la base de datos");
             request.setAttribute("errorExist", true);
-            request.getRequestDispatcher("otros/error.jsp").forward(request, response);
+            request.getRequestDispatcher("otros/error2.jsp").forward(request, response);
         } finally {
             // Cerrar ResultSet, PreparedStatement y Connection
             try {
