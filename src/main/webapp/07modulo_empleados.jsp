@@ -22,7 +22,7 @@
             }
 
             body {
-                background: url('img/upload-816230812391.png') no-repeat center center fixed;
+                background: url('img/Fondo1.png') no-repeat center center fixed;
                 background-size: cover;
             }
 

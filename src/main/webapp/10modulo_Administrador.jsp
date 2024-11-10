@@ -14,7 +14,7 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-image: url('img/upload-816230812391.png');
+            background-image: url('img/Fondo1.png');
             background-size: cover;
             background-position: center;
             margin: 0;

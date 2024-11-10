@@ -24,7 +24,7 @@
 
             body {
                 display: inline-block;
-                background: url(img/upload-816230812391.png) no-repeat;
+                background: url(img/Fondo1.png) no-repeat;
                 background-size: 100% 100%;
                 background-attachment: fixed;
                 margin-top: 10px;

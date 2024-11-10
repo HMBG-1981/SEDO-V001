@@ -11,7 +11,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Registrar Usuario</title>
+        <title>Registro Clientes</title>
         <style>
             /*CSS Estilo: Se utilizan estilos CSS para dar formato y diseño a los elementos de la página. Aquí se 
             establecen propiedades como márgenes, tamaños de letra, colores de fondo, sombras y bordes redondeados.*/
@@ -22,7 +22,7 @@
             }
 
             body {
-                background-image: url(img/upload-816230812391.png);
+                background-image: url(img/Fondo1.png);
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -158,7 +158,7 @@
                 background-color: #45a049;
             }
 
-           footer {
+            footer {
                 margin-top: 15px;
                 font-size: 90%;
                 color: #49ff00;
@@ -174,12 +174,16 @@
         </style>
     </head>
     <body>
+        <!-- Formulario de registro de clientes que envía los datos al servlet "UserRegistration" mediante el método POST -->
         <form action="UserRegistration" method="post" onsubmit="return validateForm()">
-            <h1>CLIENTES</h1>
-            <h4>REGISTRO CLIENTES</h4>
+            <h1>CLIENTES</h1> <!-- Título principal de la página -->
+            <h4>REGISTRO CLIENTES</h4> <!-- Subtítulo del formulario de registro -->
+
+            <!-- Campo de selección para el tipo de documento y tipo de usuario -->
             <div class="inline-fields">
                 <div>
                     <b>Tipo De Documento</b>
+                    <!-- Selección del tipo de documento requerido para el registro -->
                     <select name="tipoDocumento" required>
                         <option value="">---------</option>
                         <option value="1">Cédula de Ciudadanía</option>
@@ -191,39 +195,52 @@
                 </div>
                 <div>
                     <b>Tipo De Usuario</b>
+                    <!-- Selección del tipo de usuario, sólo disponible para el rol de cliente -->
                     <select name="tipoUsuario" required>
                         <option value="">-----------</option>
                         <option value="3">Cliente</option>
                     </select>
                 </div>
             </div>
+
+            <!-- Campos de entrada para datos personales del cliente -->
             <div class="inline-fields">
                 <div>
+                    <!-- Campo para el número de documento del cliente -->
                     <input class="controls" name="documento" id="documento" placeholder="Número de Documento" required>
+                    <!-- Campo para los nombres del cliente -->
                     <input class="controls" type="text" name="nombres" id="nombres" placeholder="Nombres" required>
                 </div>
                 <div>
+                    <!-- Campo para los apellidos del cliente -->
                     <input class="controls" type="text" name="apellidos" id="apellidos" placeholder="Apellidos" required>
+                    <!-- Campo para la dirección del cliente -->
                     <input class="controls" type="text" name="direccion" id="direccion" placeholder="Dirección" required>
                 </div>
             </div>
+
+            <!-- Campos adicionales para el teléfono, correo y contraseña -->
             <input class="controls" type="text" name="telefono" id="telefono" placeholder="Número de Teléfono" required>
             <input class="controls" type="email" name="correo" id="correo" placeholder="Email" required>
             <input class="controls" type="password" name="contraseña" id="contraseña" placeholder="Contraseña" required>
 
+            <!-- Checkbox para aceptar términos y condiciones -->
             <div class="checkbox">
                 <input type="checkbox" id="termsCheckbox" onclick="toggleSubmitButton()" required>
                 <label for="termsCheckbox">Estoy de acuerdo con <a href="otros/terminosycondiciones.jsp">Términos y Condiciones</a></label>
             </div>
 
+            <!-- Botones de acción para registrar o actualizar el usuario -->
             <button class="btn-a" type="submit" name="action" value="register" id="registerBtn" disabled>Registrar</button>
             <button class="btn-a" type="submit" name="action" value="update" id="updateBtn" disabled>Actualizar</button>
 
+            <!-- Enlace para usuarios que ya tienen una cuenta -->
             <p><a href="01index.jsp">¿Ya tengo Cuenta?</a></p>
         </form>        
-        
 
+        <!-- Scripts para manejar el formulario -->
         <script>
+            // Función para habilitar o deshabilitar los botones de registro y actualización según el estado del checkbox de términos
             function toggleSubmitButton() {
                 const termsCheckbox = document.getElementById('termsCheckbox');
                 const registerBtn = document.getElementById('registerBtn');
@@ -232,6 +249,7 @@
                 updateBtn.disabled = !termsCheckbox.checked;
             }
 
+            // Función para validar que todos los campos obligatorios estén completos antes de enviar el formulario
             function validateForm() {
                 const form = document.querySelector('form');
                 const inputs = form.querySelectorAll('input[required], select[required]');
@@ -247,14 +265,18 @@
                     alert('Por favor, completa todos los campos.');
                 }
 
-                return valid;
+                return valid; // Retorna false si faltan campos, lo que impide el envío del formulario
             }
         </script>
+
+        <!-- Enlace para regresar a la página de inicio -->
         <a href="01index.jsp" class="go-to-index-btn">Ir a Inicio</a>
+
+        <!-- Pie de página con copyright -->
         <footer>
             <img src="img/pngegg.png" alt="Copyright" class="copyright-logo">
             2024. Todos los derechos reservados. SEDO-CRA V1.0.0
-        </footer
+        </footer>
+    </body>
 
-    </body>    
 </html>

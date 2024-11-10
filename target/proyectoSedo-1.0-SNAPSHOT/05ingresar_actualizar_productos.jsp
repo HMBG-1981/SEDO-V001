@@ -10,7 +10,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Registrar Productos</title>
+        <title>Registro Productos</title>
 
         <style>
             *{
@@ -20,7 +20,7 @@
             }
 
             body{
-                background-image: url(img/upload-816230812391.png);
+                background-image: url(img/Fondo1.png);
                 display: inline-block;
                 margin: 0 450px;
                 background-repeat: no-repeat;

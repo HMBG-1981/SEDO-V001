@@ -16,7 +16,7 @@
                 font-family: 'Times New Roman', Times, serif;
                 margin: 0;
                 padding: 0;
-                background-image: url('img/upload-816230812391.png');
+                background-image: url('img/Fondo1.png');
                 background-size: cover; /* Ajusta el tamaño de la imagen al área completa */
                 background-position: center; /* Centra la imagen */
                 background-repeat: no-repeat; /* Evita que la imagen se repita */

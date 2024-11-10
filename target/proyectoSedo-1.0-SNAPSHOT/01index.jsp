@@ -9,7 +9,7 @@
 <html>
     <head>
         <!-- Título de la página -->
-        <title>INICIO ASADOS ANGELICA DATABASE</title>   
+        <title>Index Asados Angelica</title>   
         <meta charset="utf-8">   
 
         <style>
@@ -26,15 +26,15 @@
             div#general {
                 width: 800px;
                 height: 400px;
-                background: url(img/0002.jpg) center 30px;
+                background: url(img/Logo.jpg) center 30px;
                 background-repeat: no-repeat;
             }
 
             /* Estilo del cuerpo de la página con imagen de fondo fija */
             body {
                 display: inline-block;
-                margin: 70px;
-                background: url(img/upload-816230812391.png);
+                margin: 40px;
+                background: url(img/Fondo1.png);
                 background-repeat: no-repeat;
                 background-size: 100% 100%;
                 background-attachment: fixed;
@@ -113,7 +113,7 @@
     <body>
 
         <!-- Título principal de la página -->
-        <h1>ASADOS ANGELICA - SEDO</h1>
+        <h1>ASADOS ANGELICA <br>¡Bienvenidos!</h1>
     <center>
         <!-- Ícono de usuario que aparece en la parte superior de la página -->
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="icon-user">
@@ -123,7 +123,7 @@
         <!-- Contenedor principal de los elementos de la página -->
         <div id="general">
             <!-- Enlace para registrar un nuevo usuario -->
-            <a class="regis" href="04registro_usuarios.jsp">Registrar Usuario</a>
+            <a class="regis" href="04registro_usuarios.jsp"><b>Registrar Usuario<b></a>
 
             <!-- Subtítulo de ingreso de usuarios -->
             <h2>INGRESO DE USUARIOS</h2>

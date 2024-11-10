@@ -14,7 +14,7 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
         <style>
             body {
-                background-image: url('img/upload-816230812391.png');
+                background-image: url('img/Fondo1.png');
                 background-size: cover;
                 color: #333;
                 font-family: 'Times New Roman', Times, serif;

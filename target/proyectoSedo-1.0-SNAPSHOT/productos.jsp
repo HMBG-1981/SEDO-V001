@@ -15,7 +15,7 @@
         <style>
             body {
                 font-family: Georgia, 'Times New Roman', Times, serif;
-                background-image: url('img/upload-816230812391.png'); /* Fondo */
+                background-image: url('img/Fondo1.png'); /* Fondo */
                 background-repeat: no-repeat;
                 background-size: 100% 100%;
                 background-attachment: fixed;

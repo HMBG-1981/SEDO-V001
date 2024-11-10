@@ -22,7 +22,7 @@
             }
 
             body {
-                background-image: url(img/upload-816230812391.png);
+                background-image: url('img/Fondo1.png');
                 display: flex;
                 justify-content: center;
                 align-items: center;

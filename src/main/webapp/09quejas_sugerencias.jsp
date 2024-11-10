@@ -14,7 +14,7 @@
         <style>
             body {
                 display: inline-block;
-                background: url(img/upload-816230812391.png);
+                background: url('img/Fondo1.png');
                 background-repeat: no-repeat;
                 background-size: 100% 100%;
                 background-attachment: fixed;

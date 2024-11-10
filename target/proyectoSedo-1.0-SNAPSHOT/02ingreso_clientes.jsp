@@ -9,7 +9,7 @@
 <html lang="en">
 
     <head>
-        <TItle>INICIO ASADOS ANGELICA DATABASE</TItle>
+        <TItle>Ingreso Clientes</TItle>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <meta charset="utf-8">
@@ -28,7 +28,7 @@
             div#general {
                 width: 600px;
                 height: 400px;
-                background: url(img/0002.jpg) center 30px;
+                background: url(img/Logo.jpg) center 30px;
                 background-repeat: no-repeat;
                 background-size: 80% 100%;
 
@@ -39,7 +39,7 @@
 
                 display: inline-block;
                 margin: 70px;
-                background: url(img/upload-816230812391.png);
+                background: url(img/Fondo1.png);
                 background-repeat: no-repeat;
                 background-size: 100% 100%;
                 background-attachment: fixed;
@@ -122,7 +122,7 @@
     </head>
 
     <body>
-        <h1>ASADOS ANGELICA - SEDO</h1>  
+        <h1>ASADOS ANGELICA</h1>  
         <!--<h1> Titulo muestra el nombre de la empresa con un efecto de sombra y color verde.-->  
         <div id="general">
             <h2>INGRESO CLIENTES</h2>
@@ -148,12 +148,13 @@
             <!--Un área inferior (<div id="piepagina">) que incluye un enlace para recuperar la 
             contraseña y un pequeño pie de página con información adicional.-->  
             <a href="recuperar_contraseña.jsp">¿Has olvidado tu contraseña?</a>
+            <footer>
+                <img src="img/pngegg.png" alt="Copyright" class="copyright-logo">
+                <b>2024. Todos los derechos reservados. SEDO-CRA V1.0.0</b>
+            </footer
 
         </div>    
-        <footer>
-            <img src="img/pngegg.png" alt="Copyright" class="copyright-logo">
-            <b>2024. Todos los derechos reservados. SEDO-CRA V1.0.0</b>
-        </footer
+
     </body>
 </html>
 
