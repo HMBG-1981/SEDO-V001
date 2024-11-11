@@ -79,12 +79,30 @@
                 width: 100px;
                 height: auto;
             }
+            footer {
+                margin-top: 15px;
+                font-size: 90%;
+                color: #49ff00;
+                bottom: 10px; /* Ajustar según sea necesario */
+                left: 10px; /* Ajustar según sea necesario */
+                text-align: left; /* Alinear texto a la izquierda */
+                text-shadow:
+                    -1px -1px 0 black,  /* Sombra arriba a la izquierda */
+                    1px -1px 0 black,  /* Sombra arriba a la derecha */
+                    -1px  1px 0 black,  /* Sombra abajo a la izquierda */
+                    1px  1px 0 black;  /* Sombra abajo a la derecha */
+            }
+            /* Tamaño y alineación del logotipo de derechos de autor en el pie de página */
+            .copyright-logo {
+                width: 20px; /* Ajuste de tamaño */
+                vertical-align: middle; /* Alineación vertical con el texto */
+            }
 
         </style>
     </head>
     <body>
         <div class="container">
-            <img src="img/Logo02.jpg" alt="Logo" class="logo"> <!-- Logo en la parte superior -->
+            <img src="img/Logo2.jpg" alt="Logo" class="logo"> <!-- Logo en la parte superior -->
             <h1>PODUCTOS</h1>
 
             <form id="product-form" action="carrito.jsp" method="POST">
@@ -305,5 +323,9 @@
                 <input type="submit" value="Añadir al Carrito">
             </form>
         </div>
+        <footer>
+            <img src="img/pngegg.png" alt="Copyright" class="copyright-logo">
+            2024. Todos los derechos reservados. SEDO-CRA V1.0.0
+        </footer
     </body>
 </html>

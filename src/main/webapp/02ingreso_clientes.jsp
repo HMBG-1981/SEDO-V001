@@ -111,6 +111,11 @@
                 bottom: 10px; /* Ajustar según sea necesario */
                 left: 10px; /* Ajustar según sea necesario */
                 text-align: left; /* Alinear texto a la izquierda */
+                text-shadow:
+                    -1px -1px 0 black,  /* Sombra arriba a la izquierda */
+                    1px -1px 0 black,  /* Sombra arriba a la derecha */
+                    -1px  1px 0 black,  /* Sombra abajo a la izquierda */
+                    1px  1px 0 black;  /* Sombra abajo a la derecha */
             }
             .copyright-logo {
                 width: 20px; /* Ajusta el tamaño según necesites */

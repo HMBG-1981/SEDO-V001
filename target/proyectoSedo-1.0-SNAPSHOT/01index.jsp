@@ -101,6 +101,11 @@
                 bottom: 10px; /* Ajuste de posición */
                 left: 10px; /* Ajuste de posición */
                 text-align: left; /* Alineación a la izquierda */
+                text-shadow:
+                    -1px -1px 0 black,  /* Sombra arriba a la izquierda */
+                    1px -1px 0 black,  /* Sombra arriba a la derecha */
+                    -1px  1px 0 black,  /* Sombra abajo a la izquierda */
+                    1px  1px 0 black;  /* Sombra abajo a la derecha */
             }
 
             /* Tamaño y alineación del logotipo de derechos de autor en el pie de página */

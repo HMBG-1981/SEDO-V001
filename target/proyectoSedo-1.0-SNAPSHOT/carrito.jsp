@@ -98,13 +98,32 @@
                 border: none;
                 cursor: pointer;
             }
+            footer {
+                margin-top: 15px;
+                font-size: 90%;
+                color: #49ff00;
+                position: absolute; /* Posicionamiento absoluto */
+                bottom: 10px; /* Ajustar según sea necesario */
+                left: 10px; /* Ajustar según sea necesario */
+                text-align: left; /* Alinear texto a la izquierda */
+                text-shadow:
+                    -1px -1px 0 black,  /* Sombra arriba a la izquierda */
+                    1px -1px 0 black,  /* Sombra arriba a la derecha */
+                    -1px  1px 0 black,  /* Sombra abajo a la izquierda */
+                    1px  1px 0 black;  /* Sombra abajo a la derecha */
+            }
+            /* Tamaño y alineación del logotipo de derechos de autor en el pie de página */
+            .copyright-logo {
+                width: 20px; /* Ajuste de tamaño */
+                vertical-align: middle; /* Alineación vertical con el texto */
+            }
 
         </style>
     </head>
     <body>
         <div class="container">
             <h1>Carrito de Compras</h1>
-            <form action="PedidoServlet" method="POST">
+            <form id="carrito-form" action="PedidoServlet" method="POST">
                 <table>
                     <thead>
                         <tr>
@@ -115,7 +134,7 @@
                             <th>Acciones</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody id="carrito-body">
                         <% 
                             String[] productos = request.getParameterValues("productos");
                             double total = 0.0;
@@ -125,21 +144,21 @@
                                     String[] partes = producto.split(":");
                                     String nombre = partes[0];
                                     double precio = Double.parseDouble(partes[1]);
-                                    int cantidad = partes.length > 2 ? Integer.parseInt(partes[2]) : 1; // Default cantidad: 1
+                                    int cantidad = partes.length > 2 ? Integer.parseInt(partes[2]) : 1;
                                     double totalProducto = precio * cantidad;
                                     total += totalProducto;
                         %>
-                        <tr>
+                        <tr id="<%= nombre %>">
                             <td><%= nombre %></td>
                             <td>$<%= String.format("%.2f", precio) %></td>
                             <td class="quantity-control">
                                 <button type="button" onclick="updateQuantity('<%= nombre %>', 'decrease')">-</button>
-                                <input type="number" name="cantidad_<%= nombre %>" value="<%= cantidad %>" min="1">
+                                <input type="number" name="cantidad_<%= nombre %>" value="<%= cantidad %>" min="1" onchange="updateQuantity('<%= nombre %>', 'custom')">
                                 <button type="button" onclick="updateQuantity('<%= nombre %>', 'increase')">+</button>
                             </td>
-                            <td>$<%= String.format("%.2f", totalProducto) %></td>
-                            <td><button type="button" class="remove-btn" onclick="removeProduct('<%= nombre %>')">Eliminar</button></td>
-                    <input type="hidden" name="productos" value="<%= nombre + ":" + precio + ":" + cantidad %>"> <!-- Enviar al servlet -->
+                            <td class="total-producto">$<%= String.format("%.2f", totalProducto) %></td>
+                            <td><button type="button" class="remove-btn" onclick="removeProduct('<%= nombre %>', <%= totalProducto %>)">Eliminar</button></td>
+                    <input type="hidden" name="productos" value="<%= nombre + ":" + precio + ":" + cantidad %>"> 
                     </tr>
                     <% 
                             }
@@ -155,7 +174,7 @@
                 </table>
 
                 <% if (productos != null && productos.length > 0) { %>
-                <h2>Total: $<%= String.format("%.2f", total) %></h2>
+                <h2>Total: $<span id="total-a-pagar"><%= String.format("%.2f", total) %></span></h2>
                 <button type="submit">Confirmar Pedido</button>
                 <button type="button" onclick="window.location.href = 'productos.jsp'">Volver a Productos</button>
                 <% } %>
@@ -163,27 +182,57 @@
         </div>
 
         <script>
-            // Función para aumentar o disminuir la cantidad de productos
-            function updateQuantity(nombre, action) {
-                let input = document.querySelector(`input[name='cantidad_${nombre}']`);
-                let currentQuantity = parseInt(input.value);
-                if (action === 'increase') {
-                    input.value = currentQuantity + 1;
-                } else if (action === 'decrease' && currentQuantity > 1) {
-                    input.value = currentQuantity - 1;
-                }
-                // Aquí puedes agregar lógica para actualizar el carrito dinámicamente si es necesario
+        let totalPagar = <%= total %>;
+
+        function updateQuantity(nombre, action) {
+            let row = document.getElementById(nombre);
+            let input = row.querySelector("input[name='cantidad_" + nombre + "']");
+            let currentQuantity = parseInt(input.value);
+            let precio = parseFloat(row.cells[1].innerText.substring(1)); // Extraer precio sin el signo '$'
+
+            if (action === 'increase') {
+                currentQuantity++;
+            } else if (action === 'decrease' && currentQuantity > 1) {
+                currentQuantity--;
+            } else if (action === 'custom') {
+                currentQuantity = Math.max(1, currentQuantity); // No permitir que la cantidad sea menor a 1
             }
 
-            // Función para eliminar productos
-            function removeProduct(nombre) {
-                let row = document.querySelector(`input[name='cantidad_${nombre}']`).closest('tr');
-                row.remove();
-                // Aquí puedes agregar lógica para eliminar el producto del carrito dinámicamente si es necesario
-            }
+            // Actualizar el valor de la cantidad
+            input.value = currentQuantity;
+
+            // Calcular el nuevo total del producto
+            let totalProducto = precio * currentQuantity;
+            row.querySelector(".total-producto").innerText = "$" + totalProducto.toFixed(2);
+
+            // Actualizar el total global
+            totalPagar = calculateTotal();
+            document.getElementById("total-a-pagar").innerText = "$" + totalPagar.toFixed(2);
+        }
+
+        function removeProduct(nombre, totalProducto) {
+            // Eliminar la fila del carrito
+            let row = document.getElementById(nombre);
+            row.remove();
+
+            // Restar el total del producto eliminado
+            totalPagar -= totalProducto;
+
+            // Actualizar el total
+            document.getElementById("total-a-pagar").innerText = "$" + totalPagar.toFixed(2);
+        }
+
+        function calculateTotal() {
+            let total = 0.0;
+            document.querySelectorAll(".total-producto").forEach(function (cell) {
+                total += parseFloat(cell.innerText.substring(1)); // Extraer precio sin el signo '$'
+            });
+            return total;
+        }
         </script>
+        <footer>
+            <img src="img/pngegg.png" alt="Copyright" class="copyright-logo">
+            2024. Todos los derechos reservados. SEDO-CRA V1.0.0
+        </footer>
     </body>
 </html>
-
-
-

@@ -20,7 +20,6 @@ import conexion.conexionbd; // Importa tu clase de conexión
 
 @WebServlet("/PedidoServlet")
 public class PedidoServlet extends HttpServlet {
-
     private static final long serialVersionUID = 1L;
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
