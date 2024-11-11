@@ -124,7 +124,7 @@
 
             <div class="row">        
                 <div class="col">                                 
-                    <img src="img/Logo02.jpg" width="100%">
+                    <img src="img/Logo2.jpg" width="100%">
                 </div>           
             </div>
         </div>

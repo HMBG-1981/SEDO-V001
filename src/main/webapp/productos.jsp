@@ -79,6 +79,15 @@
                 width: 100px;
                 height: auto;
             }
+            a {
+                font-size: 15px;
+                color: #49ff00;
+                text-shadow:
+                    -1px -1px 0 black,  /* Sombra arriba a la izquierda */
+                    1px -1px 0 black,  /* Sombra arriba a la derecha */
+                    -1px  1px 0 black,  /* Sombra abajo a la izquierda */
+                    1px  1px 0 black;  /* Sombra abajo a la derecha */
+            }
             footer {
                 margin-top: 15px;
                 font-size: 90%;
@@ -323,6 +332,7 @@
                 <input type="submit" value="Añadir al Carrito">
             </form>
         </div>
+        <a href="06home_usuarios.jsp" class="go-to-index-btn"><b><--Volver al Home</b></a>
         <footer>
             <img src="img/pngegg.png" alt="Copyright" class="copyright-logo">
             2024. Todos los derechos reservados. SEDO-CRA V1.0.0

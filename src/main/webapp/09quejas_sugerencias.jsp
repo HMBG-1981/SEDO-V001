@@ -87,6 +87,16 @@
             .buzon input[type="submit"]:hover {
                 background-color: #0056b3;
             }
+            a {
+                font-size: 20px;
+                margin-left: 750px;
+                color: #49ff00;
+                text-shadow:
+                    -1px -1px 0 black,  /* Sombra arriba a la izquierda */
+                    1px -1px 0 black,  /* Sombra arriba a la derecha */
+                    -1px  1px 0 black,  /* Sombra abajo a la izquierda */
+                    1px  1px 0 black;  /* Sombra abajo a la derecha */
+            }
             footer {
                 margin-top: 15px;
                 font-size: 90%;
@@ -117,7 +127,7 @@
     <body>
         <div class="buzon">
             <div class="header">
-                <img src="img/Logo02.jpg" alt="Logo" />
+                <img src="img/Logo2.jpg" alt="Logo" />
                 <h1>BUZÓN DE QUEJAS Y SUGERENCIAS<br> ASADOS ANGÉLICA</h1>
             </div>
 
@@ -130,12 +140,15 @@
                 <textarea id="mensaje" name="mensaje" required></textarea><br><br>
                 <input type="hidden" id="fechaHora" name="fechaHora">
                 <input type="submit" value="Enviar">
+                
             </form>
             <div id="respuesta"></div>
         </div>
+        
         <footer>
             <img src="img/pngegg.png" alt="Copyright" class="copyright-logo">
             <b>2024. Todos los derechos reservados. SEDO-CRA V1.0.0</b>
+            <a href="06home_usuarios.jsp" class="go-to-index-btn"><b><--Volver al Home</b></a>
         </footer
     </body>
 </html>

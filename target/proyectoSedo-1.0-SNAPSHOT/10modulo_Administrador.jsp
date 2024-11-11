@@ -123,7 +123,7 @@
         <p>¡Bienvenido Administrador!</p>
         <!-- Logo centrado -->
         <div class="logo">
-            <img src="img/Logo02.jpg" alt="Logo">
+            <img src="img/Logo2.jpg" alt="Logo">
         </div>
 
         <!-- Título -->
